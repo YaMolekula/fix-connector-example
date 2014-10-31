@@ -28,7 +28,11 @@ public class Main {
 			socketInitiator = new SocketInitiator(initiatorApplication, fileStoreFactory, initiatorSettings, fileLogFactory, messageFactory);
 			
 			System.out.println("************");
+			try {
 			socketInitiator.start();
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
 			System.out.println("************");
 			
 			SessionID sessionId = socketInitiator.getSessions().get(0);

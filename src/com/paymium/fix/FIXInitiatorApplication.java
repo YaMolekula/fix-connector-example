@@ -32,9 +32,9 @@ public class FIXInitiatorApplication implements Application {
 
 	@Override
 	public void toAdmin(Message message, SessionID sessionId) {
-		
-	/*	System.out.println("To admin : " + message.toString());
-		
+
+		System.out.println("To admin : " + message.toString());
+
 		try {
 			if (MsgType.LOGON.equals(message.getHeader().getField(new MsgType()).getValue())) {	
 				message.getHeader().setField(new Username("JAVA_TESTS"));
@@ -43,7 +43,7 @@ public class FIXInitiatorApplication implements Application {
 		catch(FieldNotFound fnfe) {
 			// NOOP
 			System.out.println("fuckendish");
-		}*/
+		}
 	}
 
 
