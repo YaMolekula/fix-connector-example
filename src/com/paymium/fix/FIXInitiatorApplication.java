@@ -18,35 +18,20 @@ public class FIXInitiatorApplication implements Application {
 
 	@Override
 	public void fromAdmin(Message arg0, SessionID arg1) throws FieldNotFound,
-	IncorrectDataFormat, IncorrectTagValue, RejectLogon {
-		// TODO Auto-generated method stub
-
-	}
+	IncorrectDataFormat, IncorrectTagValue, RejectLogon  { }
 
 	@Override
 	public void fromApp(Message arg0, SessionID arg1) throws FieldNotFound,
-	IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType {
-		// TODO Auto-generated method stub
-
-	}
+	IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType  { }
 
 	@Override
-	public void onCreate(SessionID arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	public void onCreate(SessionID arg0) { }
 
 	@Override
-	public void onLogon(SessionID arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	public void onLogon(SessionID arg0)  { }
 
 	@Override
-	public void onLogout(SessionID arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	public void onLogout(SessionID arg0)  { }
 
 	@Override
 	public void toAdmin(Message message, SessionID arg1) {
@@ -63,10 +48,6 @@ public class FIXInitiatorApplication implements Application {
 	}
 
 	@Override
-	public void toApp(Message arg0, SessionID arg1) throws DoNotSend {
-		// TODO Auto-generated method stub
-
-	}
-
+	public void toApp(Message arg0, SessionID arg1) throws DoNotSend  { }
 
 }
