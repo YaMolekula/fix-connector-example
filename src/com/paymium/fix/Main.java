@@ -80,8 +80,9 @@ public class Main {
 
 		mdr.setField(updateType);
 
-		mdr.setField(new NoRelatedSym(1));
-		mdr.setField(new Symbol(currencyPair));
+		MarketDataRequest.NoRelatedSym instruments = new MarketDataRequest.NoRelatedSym();
+		instruments.set(new Symbol(currencyPair));
+		mdr.addGroup(instruments);
 
 		// Specify that we'll want the bids and asks
 		mdr.setField(new NoMDEntryTypes(2));	
