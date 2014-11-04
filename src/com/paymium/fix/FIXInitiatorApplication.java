@@ -42,7 +42,7 @@ public class FIXInitiatorApplication implements Application {
 			}
 		}
 		catch(FieldNotFound fnfe) {
-			throw new RuntimeError("Error while fucking with logon message");
+			throw new RuntimeError();
 		}
 
 	}

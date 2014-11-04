@@ -47,13 +47,13 @@ public class Main {
 
 		SessionID sessionId = socketInitiator.getSessions().get(0);
 
-		// Give 30s to the engine for it to properly connect
-		Thread.sleep(30000);
+		// Give 15s to the engine for it to properly connect
+		Thread.sleep(15000);
 		
 		// At this point we're logged-on, time to send a market data request
 		sendMarketDataRequest(sessionId);
 
-		Thread.sleep(100000);
+		Thread.sleep(1000000);
 
 		System.out.println("Exited FIX initiator");
 	}
