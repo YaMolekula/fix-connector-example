@@ -32,7 +32,7 @@ public class Main {
 		System.out.println("Starting FIX initiator, testing session management and, MarketDataRequests");
 
 		SocketInitiator socketInitiator = null;
-		String fileName = "/Users/david/code/java/fix-test/settings.cfg";
+		String fileName = "./settings.cfg";
 
 		SessionSettings initiatorSettings = new SessionSettings(new FileInputStream(fileName));
 		Application initiatorApplication = new FIXInitiatorApplication();
@@ -91,14 +91,7 @@ public class Main {
 		group.set(new MDEntryType(MDEntryType.OFFER));
 		mdr.addGroup(group);
 
-		boolean r = Session.sendToTarget(mdr, sessionId);
-		
-		if (r) {
-			System.out.println("Message reported as sent");
-		}
-		else {
-			System.out.println("Message apparently not sent");
-		}
+		Session.sendToTarget(mdr, sessionId);
 	}
 
 
