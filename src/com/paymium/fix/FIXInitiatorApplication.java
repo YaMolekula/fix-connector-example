@@ -21,8 +21,20 @@ public class FIXInitiatorApplication implements Application {
 	IncorrectDataFormat, IncorrectTagValue, RejectLogon  { }
 
 	@Override
-	public void fromApp(Message arg0, SessionID arg1) throws FieldNotFound,
-	IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType  { }
+	public void fromApp(Message message, SessionID sessionId) throws FieldNotFound,
+	IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType  {
+		if (MsgType.MARKET_DATA_SNAPSHOT_FULL_REFRESH.equals(message.getHeader().getField(new MsgType()).getValue())) {
+			// Handle snapshot here
+			System.out.println("Received a full market data snapshot");
+			System.out.println("Place custom handling code here");
+		}
+		else if (MsgType.MARKET_DATA_INCREMENTAL_REFRESH.equals(message.getHeader().getField(new MsgType()).getValue())) {
+			// Handle incremental updates here
+			System.out.println("Received an incremental market data update");
+			System.out.println("Place custom handling code here");
+		}
+		
+	}
 
 	@Override
 	public void onCreate(SessionID arg0) { }
@@ -34,7 +46,7 @@ public class FIXInitiatorApplication implements Application {
 	public void onLogout(SessionID arg0)  { }
 
 	@Override
-	public void toAdmin(Message message, SessionID arg1) {
+	public void toAdmin(Message message, SessionID sessionId) {
 		try {
 			if (MsgType.LOGON.equals(message.getHeader().getField(new MsgType()).getValue())) {     
 				message.getHeader().setField(new Username("JAVA_TESTS"));
